@@ -1,0 +1,21 @@
+The solution is to remove the redundant nested `:hover`.
+
+```css
+.outer {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+.outer:hover .inner {
+  background-color: yellow; /* Achieves the desired effect */
+}
+
+.inner {
+  width: 50px;
+  height: 50px;
+  background-color: lightcoral;
+}
+```
+
+By simplifying the CSS to a single `:hover` selector targeting the `.inner` element within the `.outer`'s hover state, the expected style change to `yellow` is correctly applied.
