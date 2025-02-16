@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an issue where the expected behavior of the `:hover` pseudo-class is not achieved when nested inside another `:hover` pseudo-class.
+
+```css
+.outer {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+.outer:hover .inner {
+  background-color: lightgreen;
+}
+
+.outer:hover:hover .inner {
+  background-color: yellow;
+}
+
+.inner {
+  width: 50px;
+  height: 50px;
+  background-color: lightcoral;
+}
+```
+
+The `yellow` background color is expected to appear when the `.outer` element is hovered. However, the nested `:hover` is redundant and doesn't affect the behavior; only the `lightgreen` background color appears.
